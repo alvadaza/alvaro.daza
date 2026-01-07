@@ -16,8 +16,8 @@ export default function Navbar() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
             >
-                <a href="https://prebuiltui.com?utm_source=pixels">
-                    <img className="h-8.5 w-auto" src="/assets/logo.svg" alt="logo" width={130} height={34} />
+                <a href="https://protechsolucionesplus.com/">
+                    <img className="h-20 w-auto" src="assets/Protechv.png" alt="logo" width={130} height={34} />
                 </a>
 
                 <div className="hidden md:flex items-center gap-8 transition duration-500">
@@ -27,10 +27,6 @@ export default function Navbar() {
                         </NavLink>
                     ))}
                 </div>
-
-                <button className="hidden md:block px-6 py-2.5 bg-pink-600 hover:bg-pink-700 active:scale-95 transition-all rounded-full">
-                    Start free trial
-                </button>
                 <button onClick={() => setIsOpen(true)} className="md:hidden">
                     <MenuIcon size={26} className="active:scale-90 transition" />
                 </button>

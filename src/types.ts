@@ -2,6 +2,7 @@ export interface SectionTitleProps {
     text1: string;
     text2: string;
     text3: string;
+     textWhy: string;
 }
 
 export interface TestimonialCardProps {

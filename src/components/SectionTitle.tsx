@@ -1,33 +1,81 @@
-import type { SectionTitleProps } from "../types";
 import { motion } from "motion/react";
+import type { SectionTitleProps } from "../types";
 
-export default function SectionTitle({ text1, text2, text3 }: SectionTitleProps) {
-    return (
-        <>
-            <motion.p className="text-center font-medium text-pink-600 mt-28 px-10 py-2 rounded-full bg-pink-950/70 border border-pink-800 w-max mx-auto"
-                initial={{ y: 120, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
-            >
-                {text1}
-            </motion.p>
-            <motion.h3 className="text-3xl font-semibold text-center mx-auto mt-4"
-                initial={{ y: 120, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
-            >
-                {text2}
-            </motion.h3>
-            <motion.p className="text-slate-300 text-center mt-2 max-w-xl mx-auto"
-                initial={{ y: 120, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
-            >
-                {text3}
-            </motion.p>
-        </>
-    );
+export default function SectionTitle({ text1, text2, text3, textWhy }: SectionTitleProps) {
+  return (
+    <div className="relative max-w-4xl mx-auto text-center">
+
+      {/* Badge */}
+      <motion.span
+        className="
+          inline-block
+          mb-6
+          px-5 py-2
+          rounded-full
+          text-xs
+          font-semibold
+          tracking-wider
+          text-pink-500
+          bg-pink-500/10
+          border border-pink-500/20
+        "
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        {text1}
+      </motion.span>
+
+      {/* Headline */}
+      <motion.h2
+        className="
+          text-3xl
+          sm:text-4xl
+          lg:text-5xl
+          font-semibold
+          leading-tight
+          tracking-tight
+          text-white
+        "
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+      >
+        {text2}
+      </motion.h2>
+
+      {/* Description */}
+      <motion.p
+        className="
+          mt-6
+          text-base
+          sm:text-lg
+          text-slate-400
+          max-w-2xl
+          mx-auto
+          leading-relaxed
+        "
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+      >
+        {text3}
+      </motion.p>
+  <motion.p
+        className="
+          mt-4 text-sm sm:text-base
+          font-medium uppercase tracking-wide
+          text-pink-400
+        "
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+      >
+        {textWhy}
+      </motion.p>
+    </div>
+  );
 }

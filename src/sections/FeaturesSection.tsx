@@ -8,7 +8,8 @@ import type { IFeature } from "../types";
 export default function FeaturesSection() {
     return (
         <div id="features" className="px-4 md:px-16 lg:px-24 xl:px-32">
-            <SectionTitle text1="Features" text2="What you get" text3="Components, patterns and pages — everything you need to ship." />
+            <SectionTitle text1="Quiénes Somos" text2="Impulsamos tu crecimiento con soluciones tecnológicas confiables." text3="En Protech Equipos y Suministros combinamos experiencia, innovación y compromiso para ofrecer tecnología que realmente aporta valor a tu negocio y a tu futuro digital."
+        textWhy="Por qué elegirnos"/>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-16 px-6">
                 {featuresData.map((feature: IFeature, index: number) => (
                     <motion.div key={index} className={`${index === 1 ? 'p-px rounded-[13px] bg-linear-to-br from-pink-600 to-slate-800' : ''}`}
@@ -22,7 +23,7 @@ export default function FeaturesSection() {
                             <h3 className="text-base font-medium text-white">
                                 {feature.title}
                             </h3>
-                            <p className="text-slate-400 line-clamp-2 pb-4">
+                            <p className="text-slate-400 line-clamp-2 pb-10">
                                 {feature.description}
                             </p>
                         </div>
@@ -58,7 +59,7 @@ export default function FeaturesSection() {
                         <h3 className="text-[24px]/7.5 text-slate-300 font-medium mt-6">Better design with highest revenue and profits </h3>
                         <p className="text-slate-300 mt-2">PrebuiltUI empowers you to build beautifully and scale effortlessly.</p>
                         <a href="https://prebuiltui.com" className="group flex items-center gap-2 mt-4 text-pink-600 hover:text-pink-700 transition">
-                            Learn more about the product
+                            Learn more about the product 
                             <ArrowUpRight className="size-5 group-hover:translate-x-0.5 transition duration-300" />
                         </a>
                     </motion.div>
