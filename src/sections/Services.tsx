@@ -36,7 +36,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative mt-32 max-w-7xl mx-auto px-6 space-y-32 ">
+    <section id="services" className="relative mt-32 max-w-7xl mx-auto px-6 space-y-32 ">
       
       {/* Glow general */}
       <div className="absolute -z-10 w-[500px] h-[500px] bg-pink-500/20 blur-3xl rounded-full top-0 left-1/2 -translate-x-1/2" />

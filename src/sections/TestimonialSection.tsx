@@ -6,8 +6,8 @@ import Marquee from "react-fast-marquee";
 
 export default function TestimonialSection() {
     return (
-        <div id="testimonials" className="px-4 md:px-16 lg:px-24 xl:px-32">
-            <SectionTitle text1="Testimonials" text2="Don't just take our words" text3="Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review." />
+        <div id="testimonials" className="px-4 md:px-16 lg:px-24 xl:px-32 mt-15">
+            <SectionTitle text1="Nuestros Clientes" text2="No te quedes solo con nuestras palabras" text3="Escucha lo que nuestros clientes dicen sobre nosotros. Siempre estamos buscando maneras de mejorar. Si tienes una experiencia positiva con nosotros, deja una reseña." textWhy="" />
 
             <Marquee className="max-w-5xl mx-auto mt-11" gradient={true} speed={25} gradientColor="#000">
                 <div className="flex items-center justify-center py-5 overflow-hidden">
