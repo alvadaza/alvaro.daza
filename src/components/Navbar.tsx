@@ -50,7 +50,7 @@ export default function Navbar() {
                 <a href="/">
                     <img
                         className="h-20 w-auto"
-                        src="assets/Protechv.png"
+                        src="assets/Protechv.webp"
                         alt="logo"
                         width={130}
                         height={34}
