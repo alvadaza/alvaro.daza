@@ -37,6 +37,9 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="relative mt-32 max-w-7xl mx-auto px-6 space-y-32 ">
+      <h2 className="text-4xl font-bold text-white text-center mb-16">
+        Nuestros Servicios
+      </h2>
       
       {/* Glow general */}
       <div className="absolute -z-10 w-[500px] h-[500px] bg-pink-500/20 blur-3xl rounded-full top-0 left-1/2 -translate-x-1/2" />

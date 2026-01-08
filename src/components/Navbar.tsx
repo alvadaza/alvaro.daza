@@ -3,42 +3,101 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { navlinks } from "../data/navlinks";
 import type { INavLink } from "../types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { lenisInstance } from "../components/LenisScroll";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const handleNavClick = (link: INavLink) => (e: React.MouseEvent) => {
+        e.preventDefault(); // ⛔ evita que React Router ignore el cambio
+
+        // 🔹 Siempre ir al home
+        navigate("/");
+
+        // 🔹 Cerrar menú móvil
+        setIsOpen(false);
+
+        // 🔹 Inicio → subir al top
+        if (link.href === "/") {
+            lenisInstance?.scrollTo(0);
+            return;
+        }
+
+        // 🔹 Secciones con #
+        if (link.href.includes("#")) {
+            const id = link.href.split("#")[1];
+
+            // pequeño delay para asegurar render
+            setTimeout(() => {
+                const target = document.getElementById(id);
+                if (target) {
+                    lenisInstance?.scrollTo(target);
+                }
+            }, 50);
+        }
+    };
 
     return (
         <>
-            <motion.nav className="fixed top-0 z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur"
+            <motion.nav
+                className="fixed top-0 z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
             >
-                <a href="https://protechsolucionesplus.com/">
-                    <img className="h-20 w-auto" src="assets/Protechv.png" alt="logo" width={130} height={34} />
+                <a href="/">
+                    <img
+                        className="h-20 w-auto"
+                        src="assets/Protechv.png"
+                        alt="logo"
+                        width={130}
+                        height={34}
+                    />
                 </a>
 
-                <div className="hidden md:flex items-center gap-8 transition duration-500">
+                {/* DESKTOP */}
+                <div className="hidden md:flex items-center gap-8">
                     {navlinks.map((link: INavLink) => (
-                        <NavLink key={link.name} to={link.href} className="hover:text-pink-500 transition">
+                        <NavLink
+                            key={link.name}
+                            to={link.href}
+                            onClick={handleNavClick(link)}
+                            className="hover:text-pink-500 transition"
+                        >
                             {link.name}
                         </NavLink>
                     ))}
                 </div>
+
+                {/* MOBILE BUTTON */}
                 <button onClick={() => setIsOpen(true)} className="md:hidden">
-                    <MenuIcon size={26} className="active:scale-90 transition" />
+                    <MenuIcon size={26} />
                 </button>
             </motion.nav>
 
-            <div className={`fixed inset-0 z-100 bg-black/40 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-400 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            {/* MOBILE MENU */}
+            <div
+                className={`fixed inset-0 z-50 bg-black/40 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${
+                    isOpen ? "translate-x-0" : "-translate-x-full"
+                }`}
+            >
                 {navlinks.map((link: INavLink) => (
-                    <NavLink key={link.name} to={link.href} onClick={() => setIsOpen(false)}>
+                    <NavLink
+                        key={link.name}
+                        to={link.href}
+                        onClick={handleNavClick(link)}
+                        className="text-white"
+                    >
                         {link.name}
                     </NavLink>
                 ))}
-                <button onClick={() => setIsOpen(false)} className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-pink-600 hover:bg-pink-700 transition text-white rounded-md flex">
+
+                <button
+                    onClick={() => setIsOpen(false)}
+                    className="bg-pink-600 hover:bg-pink-700 text-white rounded-md p-2"
+                >
                     <XIcon />
                 </button>
             </div>

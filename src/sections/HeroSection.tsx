@@ -79,13 +79,24 @@ export default function HeroSection() {
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
       >
-        <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11">
-          Empieza ahora
-        </button>
-        <button className="flex items-center gap-2 border border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11">
-          <VideoIcon strokeWidth={1} />
-          <span>Ver video</span>
-        </button>
+       <a
+  href="https://wa.me/573133574711?text=Hola%20quiero%20empezar%20con%20sus%20servicios"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11 transition"
+>
+  Empieza ahora
+</a>
+
+<a
+  href="https://youtu.be/5Od4M0KcQOw"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 border border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11 text-white"
+>
+  <VideoIcon strokeWidth={1} />
+  <span>Ver video</span>
+</a>
       </motion.div>
 
       <div className="flex flex-wrap justify-center items-center gap-4 md:gap-14 mt-12">

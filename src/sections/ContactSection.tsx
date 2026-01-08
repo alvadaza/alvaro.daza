@@ -54,7 +54,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
 export default function ContactSection() {
     return (
-        <div id="contacto" className="px-4 md:px-16 lg:px-24 xl:px-32 mt-10">
+        <div id="contact" className="px-4 md:px-16 lg:px-24 xl:px-32 mt-10">
             <SectionTitle text1="Contacto" text2="Ponte en contacto con nosotros" text3="¿Listo para hacer crecer tu marca? Conectemos y construyamos algo excepcional juntos."  textWhy=""/>
             <form onSubmit={sendEmail} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl mx-auto text-slate-300 mt-16 w-full' >
                 <motion.div
