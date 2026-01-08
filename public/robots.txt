@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloquear archivos internos (opcional)
+Disallow: /src/
+Disallow: /node_modules/
+
+Sitemap: https://protechsolucionesplus.com/sitemap.xml

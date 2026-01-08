@@ -6,7 +6,7 @@ const services = [
     title: "Diseño y Desarrollo Web",
     description:
       "Creamos páginas web modernas, rápidas y adaptadas a tu negocio para atraer más clientes y aumentar tu presencia digital.",
-    image: "/assets/web-removebg.png",
+    image: "/assets/web-removebg.webp",
     action: {
       label: "Hablar por WhatsApp",
       link: "https://wa.me/573133574711?text=Hola%20quiero%20información%20sobre%20sus%20servicios%20de%20diseño%20y%20desarrollo%20web.",
@@ -16,7 +16,7 @@ const services = [
     title: "Mantenimiento de Computadores",
     description:
       "Servicio técnico preventivo y correctivo para garantizar el rendimiento y la seguridad de tus equipos.",
-    image: "/assets/computadores.jpg",
+    image: "/assets/computadores.webp",
     action: {
       label: "Solicitar soporte",
       link: "https://wa.me/573133574711?text=Hola%20quiero%20solicitar%20soporte%20técnico%20para%20mantenimiento%20de%20computadores.",},
@@ -25,7 +25,7 @@ const services = [
     title: "Venta de Suministros de Cómputo",
     description:
       "Ofrecemos equipos, accesorios y suministros tecnológicos de marcas reconocidas y alta calidad.",
-    image: "/assets/computer-suministro.jpg",
+    image: "/assets/computer-suministro.webp",
     action: {
       label: "Ver catálogo",
       link: "https://tiendavirtualprotech.netlify.app/",
